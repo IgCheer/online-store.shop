@@ -71,6 +71,10 @@ button {
   overflow: hidden;
 }
 
+:root {
+  --index: calc(1vh + 1vw);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1094,15 +1098,20 @@ button {
 .page-main__swiper {
   position: relative;
 }
+@media (min-width: 1000px) {
+  .page-main__swiper {
+    max-height: 800px;
+  }
+}
 .page-main__wrapper {
   position: relative;
 }
 .page-main__slide {
-  padding-top: 160px;
+  padding-top: 100px;
 }
 @media (max-width: 1643px) {
   .page-main__slide {
-    padding-top: calc(80px + 80 * ((100vw - 320px) / 1323));
+    padding-top: calc(80px + 20 * ((100vw - 320px) / 1323));
   }
 }
 
@@ -1124,6 +1133,9 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-bottom: 50px;
 }
 @media (max-width: 1643px) {
@@ -1141,7 +1153,7 @@ button {
 }
 @media (min-width: 880px) {
   .slide-main__body {
-    width: 40%;
+    width: 50%;
   }
 }
 @media (max-width: 880px) {
@@ -1157,13 +1169,13 @@ button {
 .slide-main__title {
   font-family: "Philosopher";
   font-weight: 600;
-  font-size: 64px;
-  line-height: 160%;
+  font-size: 50px;
+  line-height: 140%;
   color: #333333;
 }
 @media (max-width: 1643px) {
   .slide-main__title {
-    font-size: calc(30px + 34 * ((100vw - 320px) / 1323));
+    font-size: calc(30px + 20 * ((100vw - 320px) / 1323));
   }
 }
 .slide-main__title span {
@@ -1171,7 +1183,7 @@ button {
 }
 @media (max-width: 991.98px) {
   .slide-main__title {
-    line-height: 120%;
+    line-height: 100%;
   }
 }
 .slide-main__text {
@@ -1234,13 +1246,13 @@ button {
 @media (min-width: 880px) {
   .slide-main__image {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100vw - 30px) * 0.6 + 15px);
-            flex: 0 0 calc((100vw - 30px) * 0.6 + 15px);
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
     -webkit-transform: translate(-100%, 0);
         -ms-transform: translate(-100%, 0);
             transform: translate(-100%, 0);
     position: relative;
-    padding: 0 0 45% 0;
+    padding: 0 0 40% 0;
   }
   .slide-main__image img {
     position: absolute;
@@ -1248,15 +1260,10 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
+    -o-object-position: top;
+       object-position: top;
     -o-object-fit: cover;
        object-fit: cover;
-  }
-}
-@media (min-width: 1200px) {
-  .slide-main__image {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(100vw - ((100vw - 1200px) / 2 + 468px + 15px));
-            flex: 0 0 calc(100vw - ((100vw - 1200px) / 2 + 468px + 15px));
   }
 }
 .slide-main__image img {
@@ -1302,12 +1309,12 @@ button {
 }
 
 .page-main__slide_two {
-  padding-top: 160px;
+  padding-top: 100px;
   background: #FFFBF3;
 }
 @media (max-width: 1643px) {
   .page-main__slide_two {
-    padding-top: calc(80px + 80 * ((100vw - 320px) / 1323));
+    padding-top: calc(80px + 20 * ((100vw - 320px) / 1323));
   }
 }
 
@@ -1370,11 +1377,11 @@ button {
   }
 }
 .page-main__slide_three {
-  padding-top: 160px;
+  padding-top: 100px;
 }
 @media (max-width: 1643px) {
   .page-main__slide_three {
-    padding-top: calc(80px + 80 * ((100vw - 320px) / 1323));
+    padding-top: calc(80px + 20 * ((100vw - 320px) / 1323));
   }
 }
 
@@ -1432,9 +1439,6 @@ button {
     row-gap: calc(15px + 5 * ((100vw - 320px) / 1323));
   }
 }
-.slide-main__image_3 img {
-  width: 100%;
-}
 @media (min-width: 880px) {
   .slide-main__image_3 {
     -webkit-box-flex: 0;
@@ -1454,6 +1458,14 @@ button {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+  }
+}
+.slide-main__image_3 img {
+  width: 100%;
+}
+@media (max-width: 888px) {
+  .slide-main__image_3 img {
+    width: 90%;
   }
 }
 
@@ -3652,6 +3664,18 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.popup-cart__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 .popup-cart__content {
   background-color: #fff;
